@@ -1,4 +1,4 @@
-package com.example.james.myrun;
+package com.example.james.myruns;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
