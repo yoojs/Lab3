@@ -113,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/class"
+            android:text="@string/class_name"
             android:id="@+id/textView6"
             android:layout_weight="1" />
 
