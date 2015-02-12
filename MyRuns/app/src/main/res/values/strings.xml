@@ -17,7 +17,6 @@
     <string name="major">Major:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <?xml version="1.0" encoding="utf-8"?>
 
     <!-- Change this to whatever the course website will be -->
     <string name="profile_photo_file_name">profile_photo.png</string>

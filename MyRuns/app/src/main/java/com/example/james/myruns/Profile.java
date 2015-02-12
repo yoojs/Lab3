@@ -2,8 +2,11 @@ package com.example.james.myruns;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.*;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.DialogFragment;
+
 
 
 public class Profile extends ActionBarActivity {
@@ -36,4 +39,9 @@ public class Profile extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void displayDialog(View m) {
+           int id = Integer.parseInt(m.getTag().toString());
+        DialogFragment fragment = MyRunsDialogFragment.newInstance(id); fragment.show(getFragmentManager(),
+                getString(R.string.dialog_fragment_tag_photo_picker)); }
 }
