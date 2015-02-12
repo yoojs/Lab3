@@ -29,7 +29,8 @@
                 android:layout_gravity="right|center_vertical"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:onClick="displayDialog" android:tag = "1" />
 
             <ImageView
                 android:layout_width="118dp"
