@@ -39,4 +39,29 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="accountPreferences">Account Preferences</string>
+    <string name="title_userProfile">User Profile</string>
+    <string name="summary_userProfile">Names, E-mail, Class, etc.</string>
+    <string name="title_privacy">Privacy Setting</string>
+    <string name="summary_privacy">Posting Your Records Anonymously</string>
+    <string name="additionalPreferences">Additional Preferences</string>
+    <string name="title_unitPref">Unit Preference</string>
+    <string name="summary_unitPref">Select the units in which you would like to see distance values
+    </string>
+    <string name="title_comment">Comment</string>
+    <string name="summary_comment">Any suggestions for this course?</string>
+
+    <array name="unitPreferences">
+        <item>Miles</item>
+        <item>Kilometers</item>
+
+    </array>
+
+    <array name="entryvalues_unitPreferences">
+        <item>Miles</item>
+        <item>Kilometers</item>
+    </array>
+
+
+
 </resources>

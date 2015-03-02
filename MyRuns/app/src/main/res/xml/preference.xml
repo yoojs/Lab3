@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <PreferenceCategory
+            android:title="@string/accountPreferences">
+
+            <Preference
+                android:title="@string/title_userProfile"
+                android:summary="@string/summary_userProfile" />
+
+            <CheckBoxPreference
+                android:key="checkbox_preference"
+                android:title="@string/title_privacy"
+                android:summary="@string/summary_privacy" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/additionalPreferences">
+
+
+            <ListPreference
+                android:key="list_preference"
+                android:title="@string/title_unitPref"
+                android:summary="@string/summary_unitPref"
+                android:entries="@array/unitPreferences"
+                android:entryValues="@array/entryvalues_unitPreferences" />
+
+            <EditTextPreference
+                android:key="edittext_preference"
+                android:title="@string/title_comment"
+                android:summary="@string/summary_comment" />
+
+        </PreferenceCategory>
+
+
+    </PreferenceScreen>
+</PreferenceScreen>
