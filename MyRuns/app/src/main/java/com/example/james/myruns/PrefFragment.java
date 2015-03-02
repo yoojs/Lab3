@@ -6,30 +6,23 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
 
-public class PrefFragment extends Fragment  {
+public class PrefFragment extends PreferenceFragment  {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.preference);
 
     }
 
-    public static class SettingsFragment extends PreferenceFragment {
-        public SettingsFragment() {}
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
-            // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.preference);
-        }
-
-    }
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
