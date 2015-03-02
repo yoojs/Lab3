@@ -16,7 +16,7 @@ import com.example.james.myruns.view.SlidingTabLayout;
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity implements com.example.james.myruns.PrefFragment.OnFragmentInteractionListener,
+public class MainActivity extends ActionBarActivity implements com.example.james.myruns.ProfileFragment.OnFragmentInteractionListener,
         com.example.james.myruns.HistoryFragment.OnFragmentInteractionListener,
         com.example.james.myruns.StartFragment.OnFragmentInteractionListener {
 
