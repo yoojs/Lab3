@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 
 
 import com.example.james.myruns.view.SlidingTabLayout;
@@ -17,6 +19,11 @@ import java.util.ArrayList;
 public class MainActivity extends ActionBarActivity implements com.example.james.myruns.PrefFragment.OnFragmentInteractionListener,
         com.example.james.myruns.HistoryFragment.OnFragmentInteractionListener,
         com.example.james.myruns.StartFragment.OnFragmentInteractionListener {
+
+    public static final String PREFS_NAME = "com.example.james.myruns";
+    EditText name, email, phone, classes, major;
+    RadioGroup radioGenders;
+    int gender;
 
     SlidingTabLayout slidingTabLayout;
     ViewPager viewPager;
@@ -37,9 +44,9 @@ public class MainActivity extends ActionBarActivity implements com.example.james
         // create a fragment list in order.
 
         fragments = new ArrayList<Fragment>();
-        fragments.add(new ProfileFragment());
-        fragments.add(new HistoryFragment());
         fragments.add(new StartFragment());
+        fragments.add(new HistoryFragment());
+        fragments.add(new ProfileFragment());
 
         // use FragmentPagerAdapter to bind the slidingTabLayout (tabs with different titles) and ViewPager (different pages of fragment) together.
         myViewPagerAdapter =new ActionTabsViewPagerAdapter(getSupportFragmentManager(),
