@@ -8,12 +8,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import com.example.james.myruns.view.SlidingTabLayout;
 
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity implements com.example.james.myruns.ProfileFragment.OnFragmentInteractionListener,
+public class MainActivity extends ActionBarActivity implements com.example.james.myruns.PrefFragment.OnFragmentInteractionListener,
         com.example.james.myruns.HistoryFragment.OnFragmentInteractionListener,
         com.example.james.myruns.StartFragment.OnFragmentInteractionListener {
 
@@ -34,6 +35,7 @@ public class MainActivity extends ActionBarActivity implements com.example.james
         viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         // create a fragment list in order.
+
         fragments = new ArrayList<Fragment>();
         fragments.add(new ProfileFragment());
         fragments.add(new HistoryFragment());
