@@ -8,8 +8,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+
+//import android.support.v4.app.DialogFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +22,7 @@ import android.widget.RadioGroup;
  * Use the {@link ProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     public static final String PREFS_NAME = "com.example.james.myruns";
     EditText name, email, phone, classes, major;
@@ -74,27 +77,30 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
+        View inflatedView = inflater.inflate(R.layout.fragment_profile, container, false);
 
         SharedPreferences settings = this.getActivity().getSharedPreferences(PREFS_NAME, 0);
-        name = (EditText) container.getRootView().findViewById(R.id.editName);
-        email = (EditText) container.getRootView().findViewById(R.id.editEmail);
-        phone = (EditText) container.getRootView().findViewById(R.id.editPhone);
-        classes = (EditText) container.getRootView().findViewById(R.id.editClass);
-        major = (EditText) container.getRootView().findViewById(R.id.editMajor);
+        name = (EditText) inflatedView.findViewById(R.id.editName);
+        email = (EditText) inflatedView.findViewById(R.id.editEmail);
+        phone = (EditText) inflatedView.findViewById(R.id.editPhone);
+        classes = (EditText) inflatedView.findViewById(R.id.editClass);
+        major = (EditText) inflatedView.findViewById(R.id.editMajor);
 
-        //RadioGroup radioGenders = (RadioGroup) container.getRootView().findViewById(R.id.radioGender);
+        RadioGroup radioGenders = (RadioGroup) inflatedView.findViewById(R.id.radioGender);
 
-        //radioGenders.check(settings.getInt("gender", -1));
+        radioGenders.check(settings.getInt("gender", -1));
 
-        if (name != null) {
-            name.setText(settings.getString("name", ""));
-            email.setText(settings.getString("major", ""));
-            phone.setText(settings.getString("phone", ""));
-            classes.setText(settings.getString("class", ""));
-            major.setText(settings.getString("major", ""));
-        }
+        name.setText(settings.getString("name", ""));
+        email.setText(settings.getString("major", ""));
+        phone.setText(settings.getString("phone", ""));
+        classes.setText(settings.getString("class", ""));
+        major.setText(settings.getString("major", ""));
 
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        //add listener to the save button
+        Button saveButton = (Button) inflatedView.findViewById(R.id.button3);
+        saveButton.setOnClickListener(this);
+
+        return inflatedView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -121,6 +127,16 @@ public class ProfileFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.button3:
+                savePreferences(v);
+                break;
+
+        }
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -137,17 +153,18 @@ public class ProfileFragment extends Fragment {
     }
 
     public void savePreferences(View view) {
+
         SharedPreferences settings = this.getActivity().getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
-        name = (EditText) view.findViewById(R.id.editName);
-        email = (EditText) view.findViewById(R.id.editEmail);
-        phone = (EditText) view.findViewById(R.id.editPhone);
-        classes = (EditText) view.findViewById(R.id.editClass);
-        major = (EditText) view.findViewById(R.id.editMajor);
-        radioGenders = (RadioGroup) view.findViewById(R.id.radioGender);
+        name = (EditText) view.getRootView().findViewById(R.id.editName);
+        email = (EditText) view.getRootView().findViewById(R.id.editEmail);
+        phone = (EditText) view.getRootView().findViewById(R.id.editPhone);
+        classes = (EditText) view.getRootView().findViewById(R.id.editClass);
+        major = (EditText) view.getRootView().findViewById(R.id.editMajor);
+        radioGenders = (RadioGroup) view.getRootView().findViewById(R.id.radioGender);
 
         int selectedId = radioGenders.getCheckedRadioButtonId();
-        gender = radioGenders.indexOfChild(view.findViewById(selectedId));
+        gender = radioGenders.indexOfChild(view.getRootView().findViewById(selectedId));
 
         String savedName = name.getText().toString();
         String savedEmail= email.getText().toString();
@@ -165,5 +182,13 @@ public class ProfileFragment extends Fragment {
         editor.commit();
 
     }
+
+    /*
+    public void displayDialog(View m) {
+        int id = Integer.parseInt(m.getTag().toString());
+        DialogFragment fragment = MyRunsDialogFragment.newInstance(id); fragment.show(getFragmentManager(),
+                getString(R.string.dialog_fragment_tag_photo_picker));
+    }
+    */
 
 }
