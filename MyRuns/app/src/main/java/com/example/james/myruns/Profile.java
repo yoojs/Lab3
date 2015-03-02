@@ -8,6 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.view.*;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.app.DialogFragment;
 
 
@@ -16,7 +19,6 @@ public class Profile extends ActionBarActivity {
     EditText name, email, phone, classes, major;
     RadioGroup radioGenders;
     int gender;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,9 +98,9 @@ public class Profile extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void displayDialog(View m) {
            int id = Integer.parseInt(m.getTag().toString());
         DialogFragment fragment = MyRunsDialogFragment.newInstance(id); fragment.show(getFragmentManager(),
                 getString(R.string.dialog_fragment_tag_photo_picker)); }
-
 }
