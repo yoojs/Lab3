@@ -35,6 +35,15 @@
 
         </PreferenceCategory>
 
+        <PreferenceCategory
+            android:title="@string/misc">
+
+            <Preference
+                android:title="@string/title_web"
+                android:summary="@string/summary_web"/>
+
+        </PreferenceCategory>
+
 
     </PreferenceScreen>
 </PreferenceScreen>

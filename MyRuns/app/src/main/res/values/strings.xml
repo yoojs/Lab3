@@ -18,6 +18,14 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
 
+    <string name="start">Start</string>
+    <string name="sync">Sync</string>
+    <string name="inputType">Input Type</string>
+    <string name="activityType">Activity Type</string>
+
+    <string name="activityExample">Activity Example: Running,13.00.00, 01/01/2015, 5 miles</string>
+
+
     <!-- Change this to whatever the course website will be -->
     <string name="profile_photo_file_name">profile_photo.png</string>
     <string name="dialog_fragment_tag_photo_picker">dialog_fragment_photo_picker</string>
@@ -50,6 +58,13 @@
     </string>
     <string name="title_comment">Comment</string>
     <string name="summary_comment">Any suggestions for this course?</string>
+
+    <string name="misc">Misc</string>
+    <string name="title_web">Class Homepage</string>
+    <string name="summary_web">Web page for CS 480 - Mobile Application Development</string>
+
+
+
 
     <array name="unitPreferences">
         <item>Miles</item>

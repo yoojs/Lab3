@@ -2,30 +2,22 @@ package com.example.james.myruns;
 
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
 
 public class PrefFragment extends Fragment  {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        getActivity().getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new SettingsFragment())
-                .commit();
+        super.onCreate(savedInstanceState);
+
     }
+
     public static class SettingsFragment extends PreferenceFragment {
         public SettingsFragment() {}
 
@@ -36,6 +28,7 @@ public class PrefFragment extends Fragment  {
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preference);
         }
+
     }
 
     public interface OnFragmentInteractionListener {
@@ -44,7 +37,7 @@ public class PrefFragment extends Fragment  {
     }
 
     public PrefFragment() {
-        // Required empty public constructor
+
     }
 
     public static PrefFragment newInstance(String param1, String param2) {
@@ -58,9 +51,7 @@ public class PrefFragment extends Fragment  {
 
 
         public static final String PREFS_NAME = "com.example.james.myruns";
-        EditText name, email, phone, classes, major;
-        RadioGroup radioGenders;
-        int gender;
+
 
         // TODO: Rename parameter arguments, choose names that match
         // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
