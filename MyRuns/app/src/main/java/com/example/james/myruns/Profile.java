@@ -2,20 +2,13 @@ package com.example.james.myruns;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-=======
-import android.view.*;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.app.DialogFragment;
-
->>>>>>> 0b300b17bf01163fcba55c9562064c9d497e2b2d
 
 
 public class Profile extends ActionBarActivity {
@@ -23,6 +16,7 @@ public class Profile extends ActionBarActivity {
     EditText name, email, phone, classes, major;
     RadioGroup radioGenders;
     int gender;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,13 +96,9 @@ public class Profile extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-<<<<<<< HEAD
-
-
-=======
     public void displayDialog(View m) {
            int id = Integer.parseInt(m.getTag().toString());
         DialogFragment fragment = MyRunsDialogFragment.newInstance(id); fragment.show(getFragmentManager(),
                 getString(R.string.dialog_fragment_tag_photo_picker)); }
->>>>>>> 0b300b17bf01163fcba55c9562064c9d497e2b2d
+
 }
