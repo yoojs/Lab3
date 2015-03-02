@@ -16,7 +16,7 @@ import com.example.james.myruns.view.SlidingTabLayout;
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity implements com.example.james.myruns.ProfileFragment.OnFragmentInteractionListener,
+public class MainActivity extends ActionBarActivity implements com.example.james.myruns.PrefFragment.OnFragmentInteractionListener,
         com.example.james.myruns.HistoryFragment.OnFragmentInteractionListener,
         com.example.james.myruns.StartFragment.OnFragmentInteractionListener {
 
@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements com.example.james
         fragments = new ArrayList<Fragment>();
         fragments.add(new StartFragment());
         fragments.add(new HistoryFragment());
-        fragments.add(new ProfileFragment());
+        fragments.add(new PrefFragment());
 
         // use FragmentPagerAdapter to bind the slidingTabLayout (tabs with different titles) and ViewPager (different pages of fragment) together.
         myViewPagerAdapter =new ActionTabsViewPagerAdapter(getSupportFragmentManager(),
